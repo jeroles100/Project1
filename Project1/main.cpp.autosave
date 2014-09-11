@@ -1,3 +1,7 @@
+//General Overview: The program opens the three input files, and transfers all the necessary information into three parallel arrays,
+//one for names of players, one for points to tal points that player earned, and one that holds the number of taggs that player has on each opponent
+//
+
 #include <iostream>
 #include <fstream>
 #include <string>
