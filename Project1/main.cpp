@@ -1,3 +1,7 @@
+//General Overview: The program opens the three input files, and transfers all the necessary information into three parallel arrays,
+//one for names of players, one for points to tally points that player earned, and one that holds the number of taggs that player has on each opponent
+//I then work with the three arrays to print at the 3 verbosity levels using a different function for each
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -17,7 +21,7 @@ void getTeam(std::ifstream & file, string &name, int &players)
 
 }
 
-//cuts the portion of a string after its first space
+//cuts the portion of a string before its first space
 void parseBack(string & parse)
 {
     size_t pos;
@@ -34,7 +38,8 @@ string parseFront(string parse)
     return parse;
 }
 
-//fills a arrary of char arrays with the names of the players by calling the parseBack function to format
+//fills a arrary of char arrays with the names of the players by calling the parseBack function to format the lines of the input file
+//and places the names of all players in one array
 void playerRoster(std::ifstream & file1, std::ifstream & file2, char**& names, int players1, int players2)
 {
     string buffer;
@@ -170,6 +175,8 @@ void tagPoints(std::ifstream & file, int** tags, int* points,int players1)
     }
 
 }
+
+//tallys the total number of tags a player had against all its opponents
 int tallyTags(int** tags, int position, int opponents)
 {
     int tally = 0;
@@ -199,49 +206,45 @@ void printSim(std::ofstream & output, int* points, string name1, string name2, i
         output << name2 << "\n\n";
 }
 
-//prints the results in medium verbosity
+//prints the results in medium verbosity calls the printSim method to print overlapping lines
 void printMed(std::ofstream & output, char**& names, int** tags, int* points, string name1, string name2, int players1, int players2)
 {
 
-    int tally;
-    output << name1 << "\n\n";
+    output << name1 << "\n";
     for(int i=0; i < players1; i++)
     {
-     output << names[i]<< " had a total of " << tallyTags(tags, i, players2) << " tags" << endl;
+    output << "\t" << names[i]<< " had a total of " << tallyTags(tags, i, players2) << " tags" << endl;
     }
 
-    output << "\n"<< name2 << "\n\n";
+    output << "\n"<< name2 << "\n";
     for(int i=players1; i < players1+players2; i++)
     {
-     output << names[i]<< " had a total of " << tallyTags(tags, i, players1) << " tags" << endl;
+     output << "\t" << names[i]<< " had a total of " << tallyTags(tags, i, players1) << " tags" << endl;
     }
 
-    int bestScore;
+    int bestScore = 0;
     for(int i = 1; i < players1; i++)
     {
-        if(points[i] > points[i-1])
+        if(points[i] > points[bestScore])
             bestScore = i;
-        else
-        {
-            bestScore = i-1;
-        }
-    }
-    output << "\nBest score for " << name1 << ": " << names[bestScore] << " (" << points[bestScore] << " points)" << endl;
 
-    bestScore = 0;
-    for(int i = 1; i < players1+players2; i++)
-    {
-        if(points[i] > points[i-1] && i >= players1)
-            bestScore = i;
-        else
-            bestScore = i-1;
     }
-    output << "Best score for " << name2 << ": " << names[bestScore] << " (" << points[bestScore] << " points)" << endl;
+    output << "\nBest score for " << name1 << ": " << names[bestScore] << " (" << points[bestScore]  << " points)" << endl;
+
+    bestScore = players1;
+    for(int i = players1+1; i < players1+players2; i++)
+    {
+        if(points[i] > points[bestScore])
+            bestScore = i;
+
+    }
+    output <<  "Best score for " << name2 << ": " << names[bestScore] << " (" << points[bestScore] <<  " points)" << endl;
 
     printSim(output, points, name1, name2, players1, players2);
 
 }
 
+//Goes through the array of names and prints out how many times each player tagged each opponent, by also going throught the parallel tag array
 void tagPrinter(std::ofstream & output, char**& names, int** tags, int endPrint, int columns, int startPrint)
 {
     int startTag= 0;
@@ -251,18 +254,19 @@ void tagPrinter(std::ofstream & output, char**& names, int** tags, int endPrint,
     {
         for(int k = 0; k < columns ; k++)
         {
-            output << names[i] << " tagged " << names[startTag] << " " << tags[i][k] << " times" << endl;
+            output <<"\t" << names[i] << " tagged " << names[startTag] << " " << tags[i][k] << " times" << endl;
             startTag++;
         }
         if(startPrint== 0)
             startTag = endPrint;
         else
             startTag = 0;
-        output << names[i] << " had a total of " << tallyTags(tags, i, columns) << " tags" << endl;
+        output << "\t" << names[i] << " had a total of " << tallyTags(tags, i, columns) << " tags" << endl;
     }
 
 }
 
+//prints out in high verbosity and calls the tag printer class to help print
 void printHigh(std::ofstream & output, char**& names, int** tags, int* points, string name1, string name2, int players1, int players2)
 {
     int points1=0, points2 = 0;
@@ -270,10 +274,10 @@ void printHigh(std::ofstream & output, char**& names, int** tags, int* points, s
         points1+= points[i];
     for(int i = players1; i < players1+players2; i++)
         points2+= points[i];
-    output << name1 << "\n\n";
+    output << name1 << "\n";
     tagPrinter(output, names, tags, players1, players2, 0);
     output << name1 << ": " << points1 << " points\n\n"<< endl;
-    output << name2 << "\n\n";
+    output << name2 << "\n";
     tagPrinter(output, names, tags, players1+players2, players1, players1);
     output << name2 << ": " << points2 << " points\n\nOverall Winners: ";
 
@@ -295,7 +299,7 @@ int main(int argc, char*argv[])
 
         char** playerNames = NULL;
 
-        string line, teamName1, teamName2;
+        string teamName1, teamName2;
         int players1, players2;
 
        ifstream file1(argv[1]);

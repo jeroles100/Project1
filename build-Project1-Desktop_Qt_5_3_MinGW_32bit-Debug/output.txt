@@ -1,4 +1,229 @@
-The Cowboys: 33 points
-The Sharks: 18 points
+The Cowboys
+	Bob tagged Jac rodgers 0 times
+	Bob tagged Jill 0 times
+	Bob tagged Kenny 0 times
+	Bob tagged Kyle 0 times
+	Bob tagged Stan 0 times
+	Bob tagged fuck 0 times
+	Bob tagged cunt 0 times
+	Bob tagged cunter 0 times
+	Bob tagged buster 0 times
+	Bob tagged custer 0 times
+	Bob had a total of 0 tags
+	Sally tagged Jac rodgers 0 times
+	Sally tagged Jill 0 times
+	Sally tagged Kenny 0 times
+	Sally tagged Kyle 1 times
+	Sally tagged Stan 1 times
+	Sally tagged fuck 0 times
+	Sally tagged cunt 0 times
+	Sally tagged cunter 0 times
+	Sally tagged buster 0 times
+	Sally tagged custer 0 times
+	Sally had a total of 2 tags
+	Sam tagged Jac rodgers 0 times
+	Sam tagged Jill 0 times
+	Sam tagged Kenny 0 times
+	Sam tagged Kyle 0 times
+	Sam tagged Stan 2 times
+	Sam tagged fuck 0 times
+	Sam tagged cunt 0 times
+	Sam tagged cunter 0 times
+	Sam tagged buster 0 times
+	Sam tagged custer 0 times
+	Sam had a total of 2 tags
+	julian tagged Jac rodgers 0 times
+	julian tagged Jill 1 times
+	julian tagged Kenny 0 times
+	julian tagged Kyle 0 times
+	julian tagged Stan 0 times
+	julian tagged fuck 0 times
+	julian tagged cunt 0 times
+	julian tagged cunter 0 times
+	julian tagged buster 0 times
+	julian tagged custer 0 times
+	julian had a total of 1 tags
+	franco tagged Jac rodgers 0 times
+	franco tagged Jill 0 times
+	franco tagged Kenny 0 times
+	franco tagged Kyle 0 times
+	franco tagged Stan 0 times
+	franco tagged fuck 0 times
+	franco tagged cunt 0 times
+	franco tagged cunter 0 times
+	franco tagged buster 0 times
+	franco tagged custer 0 times
+	franco had a total of 0 tags
+	facundo tagged Jac rodgers 1 times
+	facundo tagged Jill 0 times
+	facundo tagged Kenny 0 times
+	facundo tagged Kyle 0 times
+	facundo tagged Stan 0 times
+	facundo tagged fuck 0 times
+	facundo tagged cunt 0 times
+	facundo tagged cunter 0 times
+	facundo tagged buster 0 times
+	facundo tagged custer 0 times
+	facundo had a total of 1 tags
+	raul tagged Jac rodgers 0 times
+	raul tagged Jill 0 times
+	raul tagged Kenny 0 times
+	raul tagged Kyle 0 times
+	raul tagged Stan 0 times
+	raul tagged fuck 0 times
+	raul tagged cunt 0 times
+	raul tagged cunter 0 times
+	raul tagged buster 0 times
+	raul tagged custer 0 times
+	raul had a total of 0 tags
+	claudia tagged Jac rodgers 0 times
+	claudia tagged Jill 0 times
+	claudia tagged Kenny 0 times
+	claudia tagged Kyle 0 times
+	claudia tagged Stan 0 times
+	claudia tagged fuck 0 times
+	claudia tagged cunt 0 times
+	claudia tagged cunter 0 times
+	claudia tagged buster 0 times
+	claudia tagged custer 0 times
+	claudia had a total of 0 tags
+	nithin tagged Jac rodgers 0 times
+	nithin tagged Jill 0 times
+	nithin tagged Kenny 0 times
+	nithin tagged Kyle 0 times
+	nithin tagged Stan 0 times
+	nithin tagged fuck 0 times
+	nithin tagged cunt 0 times
+	nithin tagged cunter 0 times
+	nithin tagged buster 0 times
+	nithin tagged custer 0 times
+	nithin had a total of 0 tags
+	austin tagged Jac rodgers 0 times
+	austin tagged Jill 0 times
+	austin tagged Kenny 0 times
+	austin tagged Kyle 0 times
+	austin tagged Stan 0 times
+	austin tagged fuck 0 times
+	austin tagged cunt 0 times
+	austin tagged cunter 0 times
+	austin tagged buster 0 times
+	austin tagged custer 0 times
+	austin had a total of 0 tags
+The Cowboys: 51 points
+
+
+The Sharks
+	Jac rodgers tagged Bob 0 times
+	Jac rodgers tagged Sally 0 times
+	Jac rodgers tagged Sam 0 times
+	Jac rodgers tagged julian 0 times
+	Jac rodgers tagged franco 0 times
+	Jac rodgers tagged facundo 0 times
+	Jac rodgers tagged raul 0 times
+	Jac rodgers tagged claudia 0 times
+	Jac rodgers tagged nithin 0 times
+	Jac rodgers tagged austin 0 times
+	Jac rodgers had a total of 0 tags
+	Jill tagged Bob 0 times
+	Jill tagged Sally 0 times
+	Jill tagged Sam 0 times
+	Jill tagged julian 0 times
+	Jill tagged franco 0 times
+	Jill tagged facundo 0 times
+	Jill tagged raul 0 times
+	Jill tagged claudia 0 times
+	Jill tagged nithin 0 times
+	Jill tagged austin 0 times
+	Jill had a total of 0 tags
+	Kenny tagged Bob 0 times
+	Kenny tagged Sally 0 times
+	Kenny tagged Sam 0 times
+	Kenny tagged julian 0 times
+	Kenny tagged franco 0 times
+	Kenny tagged facundo 0 times
+	Kenny tagged raul 0 times
+	Kenny tagged claudia 0 times
+	Kenny tagged nithin 0 times
+	Kenny tagged austin 0 times
+	Kenny had a total of 0 tags
+	Kyle tagged Bob 0 times
+	Kyle tagged Sally 0 times
+	Kyle tagged Sam 0 times
+	Kyle tagged julian 0 times
+	Kyle tagged franco 0 times
+	Kyle tagged facundo 0 times
+	Kyle tagged raul 0 times
+	Kyle tagged claudia 0 times
+	Kyle tagged nithin 0 times
+	Kyle tagged austin 0 times
+	Kyle had a total of 0 tags
+	Stan tagged Bob 0 times
+	Stan tagged Sally 0 times
+	Stan tagged Sam 0 times
+	Stan tagged julian 0 times
+	Stan tagged franco 0 times
+	Stan tagged facundo 0 times
+	Stan tagged raul 0 times
+	Stan tagged claudia 0 times
+	Stan tagged nithin 0 times
+	Stan tagged austin 0 times
+	Stan had a total of 0 tags
+	fuck tagged Bob 0 times
+	fuck tagged Sally 0 times
+	fuck tagged Sam 0 times
+	fuck tagged julian 0 times
+	fuck tagged franco 0 times
+	fuck tagged facundo 0 times
+	fuck tagged raul 0 times
+	fuck tagged claudia 0 times
+	fuck tagged nithin 0 times
+	fuck tagged austin 0 times
+	fuck had a total of 0 tags
+	cunt tagged Bob 0 times
+	cunt tagged Sally 0 times
+	cunt tagged Sam 0 times
+	cunt tagged julian 0 times
+	cunt tagged franco 0 times
+	cunt tagged facundo 0 times
+	cunt tagged raul 0 times
+	cunt tagged claudia 0 times
+	cunt tagged nithin 0 times
+	cunt tagged austin 0 times
+	cunt had a total of 0 tags
+	cunter tagged Bob 0 times
+	cunter tagged Sally 0 times
+	cunter tagged Sam 0 times
+	cunter tagged julian 0 times
+	cunter tagged franco 0 times
+	cunter tagged facundo 0 times
+	cunter tagged raul 0 times
+	cunter tagged claudia 0 times
+	cunter tagged nithin 0 times
+	cunter tagged austin 0 times
+	cunter had a total of 0 tags
+	buster tagged Bob 0 times
+	buster tagged Sally 0 times
+	buster tagged Sam 0 times
+	buster tagged julian 0 times
+	buster tagged franco 0 times
+	buster tagged facundo 0 times
+	buster tagged raul 0 times
+	buster tagged claudia 0 times
+	buster tagged nithin 0 times
+	buster tagged austin 0 times
+	buster had a total of 0 tags
+	custer tagged Bob 0 times
+	custer tagged Sally 0 times
+	custer tagged Sam 0 times
+	custer tagged julian 0 times
+	custer tagged franco 0 times
+	custer tagged facundo 0 times
+	custer tagged raul 0 times
+	custer tagged claudia 0 times
+	custer tagged nithin 0 times
+	custer tagged austin 0 times
+	custer had a total of 0 tags
+The Sharks: 0 points
+
 Overall Winners: The Cowboys
 
