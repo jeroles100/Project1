@@ -29,6 +29,7 @@ void parseBack(string & parse)
     parse = parse.substr(pos+1);
 }
 
+
 //returns the portion of a string before its first space
 string parseFront(string parse)
 {
@@ -39,15 +40,18 @@ string parseFront(string parse)
 }
 
 //fills a arrary of char arrays with the names of the players by calling the parseBack function to format the lines of the input file
-//and places the names of all players in one array
-void playerRoster(std::ifstream & file1, std::ifstream & file2, char**& names, int players1, int players2)
+//and places the names of all players in one array. Also fills the array of player ids with the corresponding id.
+void playerRoster(std::ifstream & file1, std::ifstream & file2, char**& names, int*& ids, int players1, int players2)
 {
     string buffer;
+    string temp;
     int size = 0;
 
     while(size<players1)
     {
         getline(file1, buffer);
+        temp = parseFront(buffer);
+        ids[size]=atoi(temp.c_str());
         parseBack(buffer);
         names[size] = new char[buffer.length()+1];
         strcpy(names[size],buffer.c_str());
@@ -56,6 +60,8 @@ void playerRoster(std::ifstream & file1, std::ifstream & file2, char**& names, i
     while(size< players1 + players2)
     {
         getline(file2, buffer);
+        temp = parseFront(buffer);
+        ids[size]=atoi(temp.c_str());
         parseBack(buffer);
         names[size] = new char[buffer.length()+1];
         strcpy(names[size],buffer.c_str());
@@ -142,9 +148,31 @@ void tagArray(int**& tags, int tagger, int target, int players1)
     tags[tagger][target]++;
 }
 
+//looks up the location of the arrays that contains the info for the person with the given id#(for the of chance that id #s are randomized since it wasn't specified)
+void idSearch(int & id, int*& idArray, int size)
+{
+    bool exit = true;
+    int counter= 0;
+
+    while(exit)
+    {
+        if(idArray[counter]==id)
+        {
+            id = counter;
+            exit = false;
+        }
+        if(counter > size) // this should only be the case if the user gives bad input
+        {
+            exit = false;
+        }
+        counter++;
+    }
+
+}
+
 //goes through the match results file and seperates the person tagged, the tagger, and the location they were tagged
 //and passes those values to the pointsArray and tagArray classes
-void tagPoints(std::ifstream & file, int** tags, int* points,int players1)
+void tagPoints(std::ifstream & file, int** tags, int* points,int*& ids, int& players1, int& players2)
 {
     string buffer;
     string placeHolder;
@@ -160,24 +188,26 @@ void tagPoints(std::ifstream & file, int** tags, int* points,int players1)
         getline(file, buffer);
         placeHolder = parseFront(buffer);
         tagger = atoi(placeHolder.c_str());
+        idSearch(tagger, ids, players1+players2);
 
         parseBack(buffer);
         placeHolder = parseFront(buffer);
         target = atoi(placeHolder.c_str());
+        idSearch(target, ids, players1+players2);
 
         parseBack(buffer);
         parseBack(buffer);
         placeHolder = parseFront(buffer);
         location = atoi(placeHolder.c_str());
 
-        pointsArray(points, tagger-1, location);
-        tagArray(tags, tagger-1, target-1, players1);
+        pointsArray(points, tagger, location);
+        tagArray(tags, tagger, target, players1);
     }
 
 }
 
 //tallys the total number of tags a player had against all its opponents
-int tallyTags(int** tags, int position, int opponents)
+int tallyTags(int**& tags, int& position, int& opponents)
 {
     int tally = 0;
     for(int k = 0; k < opponents; k++)
@@ -189,7 +219,7 @@ int tallyTags(int** tags, int position, int opponents)
 }
 
 //prints the results in low verbosity
-void printSim(std::ofstream & output, int* points, string name1, string name2, int players1, int players2)
+void printSim(std::ofstream & output, int* points, string& name1, string& name2, int& players1, int& players2)
 {
     int points1=0, points2 = 0;
     for(int i = 0; i < players1; i++)
@@ -207,7 +237,7 @@ void printSim(std::ofstream & output, int* points, string name1, string name2, i
 }
 
 //prints the results in medium verbosity calls the printSim method to print overlapping lines
-void printMed(std::ofstream & output, char**& names, int** tags, int* points, string name1, string name2, int players1, int players2)
+void printMed(std::ofstream & output, char**& names, int** tags, int* points, string& name1, string& name2, int& players1, int& players2)
 {
 
     output << name1 << "\n";
@@ -231,8 +261,8 @@ void printMed(std::ofstream & output, char**& names, int** tags, int* points, st
     }
     output << "\nBest score for " << name1 << ": " << names[bestScore] << " (" << points[bestScore]  << " points)" << endl;
 
-    bestScore = players1;
-    for(int i = players1+1; i < players1+players2; i++)
+    bestScore = 0;
+    for(int i = players1; i < players1+players2; i++)
     {
         if(points[i] > points[bestScore])
             bestScore = i;
@@ -298,6 +328,7 @@ int main(int argc, char*argv[])
     {
 
         char** playerNames = NULL;
+        int* playerIds = NULL;
 
         string teamName1, teamName2;
         int players1, players2;
@@ -309,8 +340,9 @@ int main(int argc, char*argv[])
        getTeam(file2, teamName2, players2);
 
        playerNames = new char*[players1+players2];
+       playerIds = new int[players1+players2];
 
-       playerRoster(file1, file2, playerNames, players1, players2);
+       playerRoster(file1, file2, playerNames, playerIds, players1, players2);
 
        file1.close();
        file2.close();
@@ -324,7 +356,7 @@ int main(int argc, char*argv[])
        file1.open(argv[3]);
        ofstream output(argv[4]);
 
-       tagPoints(file1, tags, points, players1);
+       tagPoints(file1, tags, points,playerIds, players1, players2);
 
        file1.close();
 
